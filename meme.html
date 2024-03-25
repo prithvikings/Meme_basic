@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Loader</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        #root{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                height: 100vh;
+        }
+        #meme{
+                height: 500px;
+        }
+
+        button{
+            /* border-radius: 10px;
+            padding: 10px 8px;
+            margin-top: 25px;
+            font-size: 30px;
+            background-color: gold;
+            cursor: pointer;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+            display: block;
+            margin-top: 25px;
+            font-size: 1.2em;
+            padding: 0.8em 2em;
+            border-radius: 2em;
+            background-color: #7f5eff;
+            border: none;
+            outline: none;
+            color: #fff;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="root">
+            <img id="meme">
+            <button onclick="fetchAPI()">Load New</button>
+    </div>
+</body>
+    <script>
+        function fetchAPI(){
+            fetch("https://meme-api.com/gimme")
+            .then((data)=>{
+
+
+                if(!data.ok)throw new Error("Not Coming Error");
+
+                return data.json();
+            })
+            .then((data)=>{
+                const imageElement=document.getElementById("meme");
+                imageElement.setAttribute("src",data.url);
+            })
+            .catch((error)=>{
+                fetchAPI();
+            });
+        }
+
+        fetchAPI();
+    </script>
+</html>
