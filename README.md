@@ -4,7 +4,7 @@ Welcome to the Meme Generator Web App! 🎉
 
 This fun and interactive web application is built using HTML, CSS, and JavaScript, providing users with a seamless experience in generating hilarious memes on the fly.
 
-## Features:
+## Features: 
 
 - **Dynamic Meme Generation:** Utilizing APIs, the app dynamically generates fresh memes every time, ensuring endless entertainment for users.
 - **Responsive Design:** The app is designed to be responsive across various devices, ensuring a consistent and enjoyable experience for all users.
